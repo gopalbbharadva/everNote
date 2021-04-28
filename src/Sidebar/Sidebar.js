@@ -44,8 +44,8 @@ class Sidebar extends React.Component {
                     note={currentNote}
                     index={index}
                     selectedNoteIndex={selectedNoteIndex}
-                    selecteNote={this.selectNote}
-                    delteNote={this.deleteNote}
+                    selectNote={this.selectNote}
+                    deleteNote={this.deleteNote}
                   >
                       
                   </Sidebaritem>
@@ -72,12 +72,13 @@ class Sidebar extends React.Component {
     });
   };
 
-  newNote = () => {
-    console.log(this.state);
+  newNote =() => {
+    this.props.makeNewNote(this.state.title)
+    this.setState({title:null,addingNote:false});
   };
 
-  selectNote = () => console.log("Note selected");
-  deleteNote = () => console.log("Note deleted");
+  selectNote = (n,i) => this.props.selectNote(n,i);
+  deleteNote = (note  ) => this.props.deleteNote(note);
 }
 
 export default withStyles(style)(Sidebar);
