@@ -3,6 +3,8 @@ import style from "../Sidebaritem/style";
 import { ListItem, ListItemText, withStyles } from "@material-ui/core";
 import "../helper";
 import { removeHTMLTags } from "../helper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 class Sidebaritem extends React.Component {
   render() {
@@ -25,10 +27,14 @@ class Sidebaritem extends React.Component {
             ></ListItemText>
           </div>
           <div
-            style={{marginRight:"1rem"}}
+            style={{ marginRight: "1rem" }}
             className={classes.deleteIcon}
-            onClick={()=> this.forDeleteNote(note)}>
-            D
+            onClick={() => this.forDeleteNote(note)}
+          >
+            <FontAwesomeIcon
+              className={classes.deleteIcon}
+              icon={faTrashAlt}
+            ></FontAwesomeIcon>
           </div>
         </ListItem>
       </div>
@@ -36,13 +42,16 @@ class Sidebaritem extends React.Component {
   }
 
   forSelectNote = (n, i) => {
-      this.props.selectNote(n,i);
-  }
+    this.props.selectNote(n, i);
+  };
 
   forDeleteNote = (n) => {
-      window.confirm(`Are you sure you want to delet ${n.title}`);
-      this.props.deleteNote(n);
-  }
+      const _isDelete=window.confirm(
+      `Are you sure you want to delet ${n.title}`
+    );
+    if (_isDelete) this.props.deleteNote(n);
+    else return null;
+  };
 }
 
 export default withStyles(style)(Sidebaritem);

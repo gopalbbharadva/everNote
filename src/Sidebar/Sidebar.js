@@ -9,6 +9,7 @@ class Sidebar extends React.Component {
     this.state = {
       addingNote: false,
       title: null,
+      flag: false,
     };
   }
   render() {
@@ -17,7 +18,12 @@ class Sidebar extends React.Component {
     if (notes) {
       return (
         <div className={classes.sidebarContainer}>
-          <Button className={classes.newNoteBtn} onClick={this.addNewNote}>
+          <Button
+            className={
+              this.state.flag ? classes.newNoteBtnCancel : classes.newNoteBtn
+            }
+            onClick={this.addNewNote}
+          >
             {this.state.addingNote ? "Cancel note" : "Add New Note"}
           </Button>
           {this.state.addingNote ? (
@@ -29,6 +35,7 @@ class Sidebar extends React.Component {
                 placeholder="Enter note here.."
               ></input>
               <Button
+                disabled={!this.state.title}
                 className={classes.newNoteSubmitBtn}
                 onClick={this.newNote}
               >
@@ -46,9 +53,7 @@ class Sidebar extends React.Component {
                     selectedNoteIndex={selectedNoteIndex}
                     selectNote={this.selectNote}
                     deleteNote={this.deleteNote}
-                  >
-                      
-                  </Sidebaritem>
+                  ></Sidebaritem>
                   <Divider></Divider>
                 </div>
               );
@@ -63,7 +68,9 @@ class Sidebar extends React.Component {
     this.setState({
       addingNote: !this.state.addingNote,
       title: null,
+      flag: !this.state.flag,
     });
+    console.log(this.state.flag);
   };
 
   updateTitle = (event) => {
@@ -72,13 +79,13 @@ class Sidebar extends React.Component {
     });
   };
 
-  newNote =() => {
-    this.props.makeNewNote(this.state.title)
-    this.setState({title:null,addingNote:false});
+  newNote = () => {
+    this.props.makeNewNote(this.state.title);
+    this.setState({ title: null, addingNote: false, flag: false });
   };
 
-  selectNote = (n,i) => this.props.selectNote(n,i);
-  deleteNote = (note  ) => this.props.deleteNote(note);
+  selectNote = (n, i) => this.props.selectNote(n, i);
+  deleteNote = (note) => this.props.deleteNote(note);
 }
 
 export default withStyles(style)(Sidebar);

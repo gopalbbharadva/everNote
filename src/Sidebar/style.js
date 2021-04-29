@@ -18,14 +18,26 @@ const style = theme => ({
       right: '5px'
     },
     newNoteBtn: {
+      marginTop:"0.5rem",
       width: '100%',
       height: '35px',
       borderBottom: '1px solid black',
       borderRadius: '0px',
-      backgroundColor: '#29487d',
-      color: 'white',
+      backgroundColor: '#10B981',
+      color: 'black',
       '&:hover': {
-        backgroundColor: '#88a2ce'
+        backgroundColor: '#6EE7B7'
+      }
+    },
+    newNoteBtnCancel: {
+      width: '100%',
+      height: '35px',
+      borderBottom: '1px solid black',
+      borderRadius: '0px',
+      backgroundColor: '#DC2626',
+      color: 'black',
+      '&:hover': {
+        backgroundColor: '#FCA5A5'
       }
     },
     sidebarContainer: {
@@ -50,9 +62,16 @@ const style = theme => ({
     },
     newNoteSubmitBtn: {
       width: '100%',
-      backgroundColor: '#28787c',
+      backgroundColor: '#2563EB',
       borderRadius: '0px',
-      color: 'white'
+      color: 'white',
+      '&:disabled':{
+        backgroundColor:"#9CA3AF",
+        color:"black"
+      },
+      '&:hover':{
+        backgroundColor:"#93C5FD",
+      }
     }
   });
   

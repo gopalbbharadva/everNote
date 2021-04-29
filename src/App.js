@@ -51,6 +51,7 @@ class App extends React.Component {
     });
   };
 
+  // selecting new note => function
   selectNote = (note, index) => {
     this.setState({
       selectedNote: note,
@@ -58,6 +59,7 @@ class App extends React.Component {
     });
   };
 
+  // updating new note => function
   noteUpdate = (id, noteobj) => {
     firestoreRef.collection("notes").doc(id).update({
       title: noteobj.title,
@@ -65,7 +67,7 @@ class App extends React.Component {
       timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
   };
-
+  // making new note => function.
   makeNewNote = async (title) => {
     const note = {
       title: title,
@@ -92,6 +94,7 @@ class App extends React.Component {
     });
   };
 
+  // deleting  new note => function.
   deleteNote = async (note) => {
     const noteindex = this.state.note.indexOf(note);
     await this.setState({
@@ -99,15 +102,23 @@ class App extends React.Component {
     });
     if (this.state.selectedNoteIndex === noteindex)
       this.setState({
-        selectedNoteIndex: null,
-        selectedNote: null,
+        selectedNoteIndex: 0,
+        selectedNote: 0,
       });
-    else if (this.state.note.length > 0) {
+    // It is called when we delete note is above the selected note.
+    else if (this.state.selectedNoteIndex > noteindex) {
       this.selectNote(
         this.state.note[this.state.selectedNoteIndex - 1],
         this.state.selectedNoteIndex - 1
       );
-      console.log("skdk",this.state.note.length);
+      console.log("skdk", this.state.note.length);
+    }
+    // It is called when we delete note is below the selected note.
+    else if (this.state.selectedNoteIndex < noteindex) {
+      this.selectNote(
+        this.state.note[this.state.selectedNoteIndex],
+        this.state.selectedNoteIndex
+      );
     } else {
       this.setState({
         selectedNoteIndex: null,
@@ -115,7 +126,7 @@ class App extends React.Component {
       });
       console.log(this.state.note.length);
     }
-    firestoreRef.collection("notes").doc(note.id).  delete();
+    firestoreRef.collection("notes").doc(note.id).delete();
   };
 }
 export default App;
