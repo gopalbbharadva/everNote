@@ -2,6 +2,7 @@ import React from "react";
 import style from "../Sidebar/style";
 import { Button, Divider, List, withStyles } from "@material-ui/core";
 import Sidebaritem from "../Sidebaritem/Sidebaritem";
+import '../Sidebar/style.css';
 
 class Sidebar extends React.Component {
   constructor() {

@@ -8,25 +8,31 @@ const style = theme => ({
       boxShadow: '0px 0px 2px black'
     },
     titleInput: {
+      minWidth: "20%",
+      maxWidth: "100%",
       height: '50px',
       boxSizing: 'border-box',
       border: 'none',
       padding: '5px',
       fontSize: '24px',
-      width: 'calc(100% - 300px)',
-      backgroundColor: '#29487d',
+      backgroundColor: '#10B981',
       color: 'white',
       paddingLeft: '50px'
     },
     editIcon: {
+      marginLeft:"1rem",
       position: 'absolute',
-      left: '310px',
-      top: '12px',
+      top: '16px',
       color: 'white',
       width: '10',
       height: '10'
     },
     editorContainer: {
+      display:"flex",
+      alignItems:"flex-start",
+      flexDirection:"column",
+      minWidth: "20%",
+      maxWidth: "100%",
       height: '100%',
       boxSizing: 'border-box'
     },

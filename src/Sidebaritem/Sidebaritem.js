@@ -7,8 +7,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 class Sidebaritem extends React.Component {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     date: null,
+  //     time: null,
+  //   };
+  // }
+
   render() {
     const { note, index, selectedNoteIndex, classes } = this.props;
+
+    // var date = note.createdAt;
+    // date = new Date(date.toDate());
+    // let hours = date.getHours();
+    // let minutes = date.getMinutes();
+    // var time = hours + ":" + minutes
 
     return (
       <div id={index}>
@@ -23,6 +37,7 @@ class Sidebaritem extends React.Component {
           >
             <ListItemText
               primary={note.title}
+              // secondary={note.createdAt}
               secondary={removeHTMLTags(note.body.substring(0, 40) + "...")}
             ></ListItemText>
           </div>
@@ -46,7 +61,7 @@ class Sidebaritem extends React.Component {
   };
 
   forDeleteNote = (n) => {
-      const _isDelete=window.confirm(
+    const _isDelete = window.confirm(
       `Are you sure you want to delet ${n.title}`
     );
     if (_isDelete) this.props.deleteNote(n);

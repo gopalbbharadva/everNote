@@ -5,7 +5,7 @@ const style = theme => ({
       height: 'calc(100% - 35px)',
       position: 'absolute',
       left: '0',
-      width: '300px',
+      minWidth: '300px',
       boxShadow: '0px 0px 2px black'
     },
     newChatBtn: {
@@ -18,8 +18,8 @@ const style = theme => ({
       right: '5px'
     },
     newNoteBtn: {
-      marginTop:"0.5rem",
-      width: '100%',
+      minWidth:"100%",
+      maxWidth:"100%",
       height: '35px',
       borderBottom: '1px solid black',
       borderRadius: '0px',
@@ -30,7 +30,8 @@ const style = theme => ({
       }
     },
     newNoteBtnCancel: {
-      width: '100%',
+      minWidth: '100%',
+      maxWidth:"100%",
       height: '35px',
       borderBottom: '1px solid black',
       borderRadius: '0px',
@@ -41,16 +42,17 @@ const style = theme => ({
       }
     },
     sidebarContainer: {
-      marginTop: '0px',
-      width: '300px',
+      minWidth:"20%",
+      maxWidth:'100%',
       height: '100%',
       boxSizing: 'border-box',
       float: 'left',
       overflowY: 'scroll',
-      overflowX: 'hidden'
+      overflowX: 'hidden',
     },
     newNoteInput: {
-      width: '100%',
+      minWidth: '100%',
+      maxWidth:"100%",
       margin: '0px',
       height: '35px',
       outline: 'none',
@@ -61,7 +63,8 @@ const style = theme => ({
       }
     },
     newNoteSubmitBtn: {
-      width: '100%',
+      minWidth:"100%",
+      maxwidth: '100%',
       backgroundColor: '#2563EB',
       borderRadius: '0px',
       color: 'white',

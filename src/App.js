@@ -12,7 +12,7 @@ class App extends React.Component {
     this.state = {
       selectedNoteIndex: null,
       selectedNote: null,
-      note: null,
+      note: [],
     };
   }
   render() {
@@ -38,17 +38,20 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    firestoreRef.collection("notes").onSnapshot((snap) => {
-      const notesData = snap.docs.map((item) => {
-        const data = item.data();
-        data["id"] = item.id;
-        return data;
+    firestoreRef
+      .collection("notes")
+      .orderBy("createdAt", "desc")
+      .onSnapshot((snap) => {
+        const notesData = snap.docs.map((item) => {
+          const data = item.data();
+          data["id"] = item.id; 
+          return data;
+        });
+        // console.log(notesData);
+        this.setState({
+          note: notesData,
+        });
       });
-      // console.log(notesData);
-      this.setState({
-        note: notesData,
-      });
-    });
   };
 
   // selecting new note => function
@@ -64,7 +67,7 @@ class App extends React.Component {
     firestoreRef.collection("notes").doc(id).update({
       title: noteobj.title,
       body: noteobj.body,
-      timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
   };
   // making new note => function.
@@ -77,7 +80,7 @@ class App extends React.Component {
     const noteFbRes = await firestoreRef.collection("notes").add({
       title: note.title,
       body: note.body,
-      timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
 
     const newNoteId = noteFbRes.id;

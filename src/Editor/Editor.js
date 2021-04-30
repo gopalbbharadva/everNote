@@ -2,6 +2,7 @@ import React from "react";
 import style from "../Editor/style";
 import { debounce, withStyles } from "@material-ui/core";
 import ReactQuill from "react-quill";
+import { BorderColor } from "@material-ui/icons";
 
 class Editor extends React.Component {
   constructor() {
@@ -35,6 +36,14 @@ class Editor extends React.Component {
     const { classes } = this.props; // exporting style.js's classes into object.
     return (
       <div className={classes.editorContainer}>
+          <BorderColor className={classes.editIcon}></BorderColor>
+          <input
+            className={classes.titleInput}
+            type="text"
+            placeholder="Enter title..."
+            value={this.state.title}
+            onChange={(e) => this.updateTitle(e)}
+          />
         <ReactQuill
           value={this.state.text}
           onChange={this.updateText}
@@ -46,11 +55,19 @@ class Editor extends React.Component {
     await this.setState({ text: val });
     this.update();
   };
+
+  updateTitle = async (event) => {
+    const title = event.target.value;
+    await this.setState({
+      title: title,
+    });
+    this.update();
+  };
   update = debounce(() => {
-      this.props.noteUpdate(this.state.id,{
-        title:this.state.title,
-        body:this.state.text
-      })
+    this.props.noteUpdate(this.state.id, {
+      title: this.state.title,
+      body: this.state.text,
+    });
   }, 1500);
 }
 
