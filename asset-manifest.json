@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/everNote/static/css/main.1dfc8d2c.chunk.css",
-    "main.js": "/everNote/static/js/main.cb45c535.chunk.js",
-    "main.js.map": "/everNote/static/js/main.cb45c535.chunk.js.map",
+    "main.js": "/everNote/static/js/main.b694c73b.chunk.js",
+    "main.js.map": "/everNote/static/js/main.b694c73b.chunk.js.map",
     "runtime-main.js": "/everNote/static/js/runtime-main.9fb9f343.js",
     "runtime-main.js.map": "/everNote/static/js/runtime-main.9fb9f343.js.map",
     "static/js/2.16511dd9.chunk.js": "/everNote/static/js/2.16511dd9.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.9fb9f343.js",
     "static/js/2.16511dd9.chunk.js",
     "static/css/main.1dfc8d2c.chunk.css",
-    "static/js/main.cb45c535.chunk.js"
+    "static/js/main.b694c73b.chunk.js"
   ]
 }
