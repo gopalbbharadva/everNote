@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/everNote/static/css/main.4b8ca1d2.chunk.css",
+    "main.css": "/everNote/static/css/main.d4ab7971.chunk.css",
     "main.js": "/everNote/static/js/main.cb45c535.chunk.js",
     "main.js.map": "/everNote/static/js/main.cb45c535.chunk.js.map",
     "runtime-main.js": "/everNote/static/js/runtime-main.9fb9f343.js",
@@ -10,13 +10,13 @@
     "static/js/3.358e8e20.chunk.js": "/everNote/static/js/3.358e8e20.chunk.js",
     "static/js/3.358e8e20.chunk.js.map": "/everNote/static/js/3.358e8e20.chunk.js.map",
     "index.html": "/everNote/index.html",
-    "static/css/main.4b8ca1d2.chunk.css.map": "/everNote/static/css/main.4b8ca1d2.chunk.css.map",
+    "static/css/main.d4ab7971.chunk.css.map": "/everNote/static/css/main.d4ab7971.chunk.css.map",
     "static/js/2.16511dd9.chunk.js.LICENSE.txt": "/everNote/static/js/2.16511dd9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9fb9f343.js",
     "static/js/2.16511dd9.chunk.js",
-    "static/css/main.4b8ca1d2.chunk.css",
+    "static/css/main.d4ab7971.chunk.css",
     "static/js/main.cb45c535.chunk.js"
   ]
 }
