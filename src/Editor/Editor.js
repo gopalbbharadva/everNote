@@ -1,5 +1,6 @@
 import React from "react";
 import style from "../Editor/style";
+import './style.css';
 import { debounce, withStyles } from "@material-ui/core";
 import ReactQuill from "react-quill";
 import { BorderColor } from "@material-ui/icons";
@@ -35,10 +36,10 @@ class Editor extends React.Component {
   render() {
     const { classes } = this.props; // exporting style.js's classes into object.
     return (
-      <div className={classes.editorContainer}>
+      <div className="editorContainer">
           <BorderColor className={classes.editIcon}></BorderColor>
           <input
-            className={classes.titleInput}
+            className="titleInput"
             type="text"
             placeholder="Enter title..."
             value={this.state.title}

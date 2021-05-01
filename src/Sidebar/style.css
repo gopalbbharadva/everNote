@@ -1,15 +1,17 @@
 .sidebarContainer{
-    min-width:"20%";
-    max-width:'100%';
-    height: '100%';
-    box-sizing: 'border-box';
-    float: 'left';
-    overflow-y: 'scroll';
-    overflow-x: 'hidden';
+    min-width:8rem;
+    max-width:100%;
+    height: 100%;
+    /* background-color: aqua; */
+    box-sizing: border-box;
+    float: left;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 
-@media (max-width:320px){
+@media (min-width:320px){
     .sidebarContainer{
-        min-width: "10%";
+        width: 15rem;
+        /* background-color: blue; */
     }
 }

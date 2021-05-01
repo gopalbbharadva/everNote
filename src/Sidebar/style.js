@@ -42,7 +42,7 @@ const style = theme => ({
       }
     },
     sidebarContainer: {
-      minWidth:"20%",
+      width:"30%",
       maxWidth:'100%',
       height: '100%',
       boxSizing: 'border-box',

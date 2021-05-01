@@ -31,7 +31,7 @@ const style = theme => ({
       display:"flex",
       alignItems:"flex-start",
       flexDirection:"column",
-      minWidth: "20%",
+      minWidth: "80%",
       maxWidth: "100%",
       height: '100%',
       boxSizing: 'border-box'

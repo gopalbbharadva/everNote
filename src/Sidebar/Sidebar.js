@@ -3,6 +3,7 @@ import style from "../Sidebar/style";
 import { Button, Divider, List, withStyles } from "@material-ui/core";
 import Sidebaritem from "../Sidebaritem/Sidebaritem";
 import '../Sidebar/style.css';
+import MediaQuery from 'react-responsive'
 
 class Sidebar extends React.Component {
   constructor() {
@@ -18,7 +19,8 @@ class Sidebar extends React.Component {
 
     if (notes) {
       return (
-        <div className={classes.sidebarContainer}>
+        
+        <div className="sidebarContainer">
           <Button
             className={
               this.state.flag ? classes.newNoteBtnCancel : classes.newNoteBtn
@@ -28,7 +30,7 @@ class Sidebar extends React.Component {
             {this.state.addingNote ? "Cancel note" : "Add New Note"}
           </Button>
           {this.state.addingNote ? (
-            <div>
+            <div >
               <input
                 type="text"
                 className={classes.newNoteInput}
