@@ -22,7 +22,7 @@ const style = theme => ({
     editIcon: {
       marginLeft:"1rem",
       position: 'absolute',
-      top: '30px',
+      top: '15px',
       color: 'white',
       width: '10',
       height: '10'
